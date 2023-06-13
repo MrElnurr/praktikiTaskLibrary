@@ -41,9 +41,14 @@ void main() {
       email: "manager@gmail.com");
 
   Employee employee = Employee(
-      position: "Employee 1",
-      name: "Employee 1",
-      email: "employee1@gmail.com");
+      position: "Employee 1", name: "Employee 1", email: "employee1@gmail.com");
   manager.addToTeam(employee);
+  manager.printTeam();
+
+  Employee employee2 = Employee(
+      position: "Employee 2",
+      name: "Employee 2",
+      email: "employee12@gmail.com");
+  manager.addToTeam(employee2);
   manager.printTeam();
 }
