@@ -10,25 +10,40 @@ class Employee extends Person {
 }
 
 class Manager extends Employee {
-  String team;
+  List<Employee> team;
   Manager(
       {required this.team,
       required super.position,
       required super.name,
       required super.email});
 
-  addToTeam() {
-    print("$name adli ishci $team komandasina add olundu");
+  void addToTeam(Employee employee) {
+    team.add(employee);
+  }
+
+  void printTeam() {
+    print("Team Members:");
+    for (Employee employee in team) {
+      print(
+          "Name: ${employee.name}, Position: ${employee.position}, Email: ${employee.email} , Team: $team");
+    }
   }
 }
+
 
 import 'person.dart';
 
 void main() {
-  Employee employee =
-      Employee(position: "IT", name: "Elnur", email: "elnurkerimov@mail.ru");
-  print("${employee.position} , ${employee.name}, ${employee.email}");
-  Manager addWorker =
-      Manager(team: "A", position: "IT", name: "Eldar", email: "eldar@mail.ru");
-  print(addWorker.addToTeam());
+  Manager manager = Manager(
+      team: [],
+      position: "Manager Position",
+      name: "Manager Name",
+      email: "manager@gmail.com");
+
+  Employee employee = Employee(
+      position: "Employee 1",
+      name: "Employee 1",
+      email: "employee1@gmail.com");
+  manager.addToTeam(employee);
+  manager.printTeam();
 }
