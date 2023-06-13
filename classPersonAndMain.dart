@@ -25,7 +25,7 @@ class Manager extends Employee {
     print("Team Members:");
     for (Employee employee in team) {
       print(
-          "Name: ${employee.name}, Position: ${employee.position}, Email: ${employee.email} , Team: $team");
+          "Name: ${employee.name}, Position: ${employee.position}, Email: ${employee.email}");
     }
   }
 }
