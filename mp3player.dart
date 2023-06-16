@@ -49,10 +49,10 @@ main() {
       'https://www.youtube.com/watch?v=D9G1VOjN_84');
   MediaFile mediaFile3 = MediaFile('Valerie Broussard - Awaken', "3:28",
       'https://www.youtube.com/watch?v=zF5Ddo9JdpY');
-  MediaFile mediaFile4 = MediaFile(
-      'Qirgin deyishme - Cavanligim getdi elimden MUZIKALNI MEYXANA',
-      "07:02",
-      'https://www.youtube.com/watch?v=sEBHQnVSBv0');
+ MediaFile mediaFile4 = MediaFile(
+      'Remix by Railgun - Черный Бумер',
+      "04:02",
+      'https://www.youtube.com/watch?v=GUUwdOcnJU8&list=RDGUUwdOcnJU');
   Playlist playlist = Playlist("", "", "",
       files: [mediaFile1, mediaFile2, mediaFile3, mediaFile4]);
   print(playlist.playPlaylist()); // normal print edir
