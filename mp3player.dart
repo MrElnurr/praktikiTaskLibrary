@@ -12,8 +12,6 @@ class MediaFile implements Playable {
   @override
   play() {
     print('Playing $title');
-    print("Duration time: $duration");
-    print("url of music: $url");
   }
 
   pause() {
@@ -25,11 +23,18 @@ class MediaFile implements Playable {
   }
 }
 
+mixin Shuffleable {
+  void shufflePlaylist() {
+    if (this is Playlist) {
+      Playlist playlist = this as Playlist;
+      playlist.files.shuffle();
+    }
+  }
+}
+
 class Playlist extends MediaFile with Shuffleable {
   List<MediaFile> files;
-  String nameOfPlaylist;
-  Playlist(super.title, super.duration, super.url,
-      {required this.files, required this.nameOfPlaylist});
+  Playlist(super.title, super.duration, super.url, {required this.files});
   playPlaylist() {
     files.forEach((element) {
       element.play();
@@ -37,15 +42,21 @@ class Playlist extends MediaFile with Shuffleable {
   }
 }
 
-mixin Shuffleable {}
-
 main() {
-  Playlist music1 = Playlist("Against The Current - Legends Never Die", "2:58",
-      "https://www.youtube.com/watch?v=r6zIGXun57U",
-      files: [], nameOfPlaylist: "League of Legends");
-  music1.play();
-  Playlist music2 = Playlist("Imagine Dragons x J.I.D - Enemy", "3:33",
-      "https://www.youtube.com/watch?v=D9G1VOjN_84",
-      files: [], nameOfPlaylist: "League of Legends");
-  music2.play();
+  MediaFile mediaFile1 = MediaFile('Against The Current - Legends Never Die',
+      "2:58", 'https://www.youtube.com/watch?v=r6zIGXun57U');
+  MediaFile mediaFile2 = MediaFile('Imagine Dragons x J.I.D - Enemy', "3:33",
+      'https://www.youtube.com/watch?v=D9G1VOjN_84');
+  MediaFile mediaFile3 = MediaFile('Valerie Broussard - Awaken', "3:28",
+      'https://www.youtube.com/watch?v=zF5Ddo9JdpY');
+  MediaFile mediaFile4 = MediaFile(
+      'Qirgin deyishme - Cavanligim getdi elimden MUZIKALNI MEYXANA',
+      "07:02",
+      'https://www.youtube.com/watch?v=sEBHQnVSBv0');
+  Playlist playlist = Playlist("", "", "",
+      files: [mediaFile1, mediaFile2, mediaFile3, mediaFile4]);
+  print(playlist.playPlaylist()); // normal print edir
+  print("--------------------------------");
+  playlist.shufflePlaylist(); // shuffle edir
+  print(playlist.playPlaylist()); //shuffledan sonra print edir
 }
