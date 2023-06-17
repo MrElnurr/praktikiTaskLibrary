@@ -18,12 +18,12 @@ class Vehicle implements Rentable {
 
   @override
   rent() {
-    print('Vehicle rented : $brand $model \nOriginal price 200 Dollar');
+    print('Vehicle rented : $brand $model \nOriginal price : 200 Dollar');
   }
 
   @override
   returnVeichle() {
-    print('Vehicle returned $brand');
+    print('Vehicle returned : $brand');
   }
 }
 
@@ -32,7 +32,8 @@ mixin Discountable {
     if (this is Car) {
       Car priceOfCar = this as Car;
       priceOfCar.price = ((priceOfCar.price * 80) / 100);
-      return print("Discounted price $priceOfCar Dollar");
+      return print(
+          "Discounted price : ${priceOfCar.price.toStringAsFixed(0)} Dollar");
     }
   }
 }
@@ -53,7 +54,7 @@ main() {
       brand: "Chevrolet",
       model: "Camaro",
       type: "Sport",
-      price: 200.0,
+      price: 200.00,
       passengerCapacity: 4);
   car1.rent();
   car1.calculateDiscountedPrice();
