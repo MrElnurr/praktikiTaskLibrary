@@ -3,15 +3,7 @@ abstract class Rentable {
   returnVeichle();
 }
 
-enum VehicleType {
-  Commercial,
-  Coupe,
-  Hatchback,
-  Sedan,
-  Sport,
-  SUV,
-  Motorcycle,
-}
+enum VehicleType { Commercial, Coupe, Hatchback, Sedan, Sport, SUV, Motorcycle }
 
 class Vehicle implements Rentable {
   String brand;
@@ -36,11 +28,11 @@ class Vehicle implements Rentable {
 }
 
 mixin Discountable {
-  calculateDiscountedPrice() {
+  void calculateDiscountedPrice() {
     if (this is Car) {
       Car priceOfCar = this as Car;
       priceOfCar.price = ((priceOfCar.price * 20) / 100);
-      print("Discounted price $priceOfCar Dollar");
+      return print("Discounted price $priceOfCar Dollar");
     }
   }
 }
@@ -64,6 +56,6 @@ main() {
       price: 200.0,
       passengerCapacity: 4);
   car1.rent();
-  print(car1.calculateDiscountedPrice());
+  car1.calculateDiscountedPrice();
   car1.returnVeichle();
 }
