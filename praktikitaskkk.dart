@@ -18,7 +18,7 @@ class Vehicle implements Rentable {
 
   @override
   rent() {
-    print('Vehicle rented : $brand $model \nOriginal price 200Dollar');
+    print('Vehicle rented : $brand $model \nOriginal price 200 Dollar');
   }
 
   @override
@@ -31,7 +31,7 @@ mixin Discountable {
   void calculateDiscountedPrice() {
     if (this is Car) {
       Car priceOfCar = this as Car;
-      priceOfCar.price = ((priceOfCar.price * 20) / 100);
+      priceOfCar.price = ((priceOfCar.price * 80) / 100);
       return print("Discounted price $priceOfCar Dollar");
     }
   }
