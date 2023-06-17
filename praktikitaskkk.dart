@@ -53,7 +53,7 @@ main() {
   Car car1 = Car(
       brand: "Chevrolet",
       model: "Camaro",
-      type: "Sport",
+      type: VehicleType.Sport.toString(),
       price: 200.00,
       passengerCapacity: 4);
   car1.rent();
