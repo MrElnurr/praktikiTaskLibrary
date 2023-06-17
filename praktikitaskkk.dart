@@ -52,7 +52,7 @@ main() {
   Car car1 = Car(
       brand: "Chevrolet",
       model: "Camaro",
-      type: "Minik",
+      type: "Sport",
       price: 200.0,
       passengerCapacity: 4);
   car1.rent();
