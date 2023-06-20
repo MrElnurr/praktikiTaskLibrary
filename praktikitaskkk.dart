@@ -23,7 +23,7 @@ class Vehicle implements Rentable {
 
   @override
   returnVeichle() {
-    print('Vehicle returned : $brand');
+    print('Vehicle returned : $brand $model');
   }
 }
 
