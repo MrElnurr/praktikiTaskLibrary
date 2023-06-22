@@ -25,32 +25,6 @@ class ChatApp<T extends Message> {
       print(message);
     }
   }
-
-  displayAllImageMessages() {
-    for (var message in messages) {
-      if (message is ImageMessage) {
-        print(message);
-      }
-    }
-  }
-
-  displayAllAudioMessages() {
-    for (var message in messages) {
-      if (message is AudioMessage) {
-        print(message);
-      }
-    }
-  }
-
-  displayAllTextMessages() {
-    for (var message in messages) {
-      if (message is TextMessage) {
-        print(message);
-      }
-    }
-  }
-}
-
 class TextMessage extends Message {
   String text;
   TextMessage(
@@ -100,8 +74,4 @@ void main(List<String> args) {
       recipient: "receivedAudio",
       timestamp: "02:00"));
   chatApp.displayAllMessages();
-  print("**************************");
-  chatApp.displayAllImageMessages();
-  chatApp.displayAllAudioMessages();
-  chatApp.displayAllTextMessages();
 }
