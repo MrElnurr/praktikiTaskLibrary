@@ -54,7 +54,6 @@ void main(List<String> args) {
   orderingSystem.addItem(order1);
   orderingSystem.addItem(order2);
   orderingSystem.addItem(order3);
-  orderingSystem.calculateTotalCost();
   var total = orderingSystem.calculateTotalCost();
   print("Total cost of order: $total manat");
 }
