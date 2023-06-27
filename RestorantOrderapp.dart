@@ -39,7 +39,7 @@ class Dessert extends FoodItem {
   Dessert(this.isSweet, super.name, super.price);
   void printSweetness() {
     String sweetness = isSweet ? 'Sweet' : 'Not Sweet';
-    print("$name - Price: $price manat, looks soo $sweetness");
+    print("$name - Price: $price manat, $sweetness");
   }
 }
 void main(List<String> args) {
